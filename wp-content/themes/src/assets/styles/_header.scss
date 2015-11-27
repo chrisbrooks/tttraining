@@ -1,0 +1,235 @@
+header{
+	position: fixed;
+    z-index: 2;
+    width: 100%;
+    @include prefixed(transition, transform .35s ease);
+
+	&.slide-up{
+		@include prefixed(transform, translateY(-35px));
+		transition:  0.6s ease;
+	}
+
+	.sub-navigation{
+		@include hardwareAccel();
+		background:$blue;
+		height:40px;
+
+		ul{
+			float:right;
+			margin:14px 0px;
+			li{
+				float:left;
+				line-height: 10px;
+				a{
+					color:$white;
+					@include font-size(1);
+					letter-spacing: 2px;
+					padding: 0px 10px;
+					text-transform: uppercase;
+					@include prefixed(transition, color .35s ease);
+					@include hardwareAccel();
+					&:hover{
+						color:$darkBlue;
+					}
+				}
+			}
+		}
+
+		ul.social{
+			&:last-child{
+				padding-right:10px;
+				margin-right:15px;
+				border-right:1px solid $white;
+			}
+		}
+
+		ul.sign-in{
+			li{
+				&:last-child{
+					a{
+						padding-right:0px;
+					}
+				}
+			}
+		}
+	}
+
+	.navigation{
+		width: 100%;
+		z-index: 3;
+		height:71px;
+		@include prefixed(transition, background .35s ease);
+		@include hardwareAccel();
+		background: $darkBlue;
+
+		.logo-container{
+			display: block;
+			float: left;
+			color: white;
+			@include font-size(1.2);
+			padding: 12px 0px;
+			position: relative;
+			letter-spacing:1px;
+			.logo{
+				display:block;
+				background: url("../images/logo-text-white.png");
+				height: 30px;
+				width: 47px;
+				background-size: cover;
+				margin: 0 auto;
+			}
+		}
+
+		.menu > li.open:before, .menu > li:hover:before {
+		    height:100%;
+		}
+
+		.menu > li.open:after, .menu > li:hover:after,.menu > li.active:after {
+			height: 5px;
+			transition: height 0.08s linear 0.2s;
+		}
+
+		.menu {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			float:right;
+			z-index: 1;
+			margin-right:-20px;
+			> li{
+				display: block;
+				float: left;
+				z-index: 1;
+				position: relative;
+				&:after {
+					content: ' ';
+					display: block;
+					position: absolute;
+					bottom: 100%;
+					left: 0;
+					right: 0;
+					height: 0px;
+					background: darken($blue, 50);
+					transition: height 0s linear 0s;
+				}
+				&:before{
+					content: ' ';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 0%;
+					background: darken($blue, 25);
+					@include prefixed(transition, height .2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s);
+					@include hardwareAccel();
+				}
+				&.open{
+					.dropdown {
+					    height:auto;
+					    background-color: #0a7fa4;
+					    > ul{
+					    	opacity:1;
+							-webkit-transform:translateY(0px);
+							-moz-transform:translateY(0px);
+							-ms-transform:translateY(0px);
+							transform:translateY(0px)
+					    }
+					}
+				}
+				> a {
+					display: block;
+					padding: 27px 20px;
+					text-decoration: none;
+					white-space: nowrap;
+					color: #fff;
+					text-transform: uppercase;
+					position: relative;
+					@include font-size(1.2);
+					z-index: 1;
+					position: relative;
+					letter-spacing:2px;
+					@include transition(color, .35s, ease);
+					@include hardwareAccel();
+
+					&:after{
+						content: ' ';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						z-index: -1;
+						right: 0;
+						height: 0%;
+						background: darken($blue, 25);
+						@include prefixed(transition, height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s);
+						@include hardwareAccel();
+					}
+					&:hover{
+						&:after{
+							height: 100%;
+						}
+					}
+				}
+
+			}
+
+		}
+		.dropdown{
+			border: none;
+			border-radius: 0px;
+			box-shadow: none;
+			padding: 0px;
+			z-index: 100;
+			background: none;
+			overflow: hidden;
+			display: block;
+			height: 0px;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 1000;
+			float: left;
+			min-width: 160px;
+			list-style: none;
+			@include font-size(1.4);
+			background-clip: padding-box;
+			@include prefixed(transition, all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s);
+			@include hardwareAccel();
+			> ul{
+				position: relative;
+				padding:10px 0px;
+				margin: 0;
+				cursor: default;
+				background: none;
+				overflow: hidden;
+				-webkit-transform: translateY(-10px);
+				-moz-transform: translateY(-10px);
+				-ms-transform: translateY(-10px);
+				transform: translateY(-10px);
+				opacity: 0;
+				filter: alpha(opacity=0);
+				@include prefixed(transition, all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s);
+				> li{
+					padding-left: 5px;
+					padding-right: 5px;
+					position: relative;
+					> a{
+						display: block;
+						background: none;
+						padding: 10px 15px;
+						letter-spacing: 2px;
+						color:$white;
+						text-transform: uppercase;
+						@include font-size(1);
+						@include prefixed(transition, color .35s ease);
+						@include hardwareAccel();
+						&:hover{
+							color:$darkBlue;
+						}
+					}
+				}
+			}
+		}
+	}
+}

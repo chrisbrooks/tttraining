@@ -1,0 +1,108 @@
+---
+layout: default.hbs
+class: login-page
+---
+
+<main class="main">
+
+{{>header}}
+
+<div class="content inner-page">
+	<div class="woocommerce">
+		<section class="section login-forms">
+			<div class="container">
+				<div class="row">
+						<div class="col2-set col-xs-12 col-sm-6 col-sm-offset-3">
+
+							<div class="tab-container" id="customer_login">
+								<ul class="etabs col-xs-12">
+									<li class="tab col-xs-6"><a href="#login">Login</a></li>
+									<li class="tab col-xs-6"><a href="#register">Register</a></li>
+								</ul>
+
+								<div class="col-xs-12">
+									<div class="row tab-content-outer">
+
+										<div class="tab-content">
+											<div class="col-1" id="login">
+
+												<form method="post" class="login">
+
+													
+													<p class="form-row form-row-wide">
+														<label for="username">Username or email address <span class="required">*</span></label>
+														<input type="text" class="input-text" name="username" id="username" value="" placeholder="Username or email address *">
+													</p>
+													<p class="form-row form-row-wide">
+														<label for="password">Password <span class="required">*</span></label>
+														<input class="input-text" type="password" name="password" id="password" placeholder="Password *">
+													</p>
+
+													
+													<p class="form-row">
+														<input type="hidden" id="_wpnonce" name="_wpnonce" value="e748039886"><input type="hidden" name="_wp_http_referer" value="/tttraining/my-account/?login=false">				<input type="submit" class="button btn submit" name="login" value="get started">
+														<label for="rememberme" class="inline">
+															<input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember me				</label>
+													</p>
+													<p class="lost_password">
+														<a href="http://localhost:8888/tttraining/my-account/lost-password/">Lost your password?</a>
+													</p>
+
+													
+												</form>
+											</div>
+
+											<div class="col-2" id="register">
+
+												<form method="post" class="register">
+
+													
+													
+														<p class="form-row form-row-wide">
+															<label for="reg_username">Username <span class="required">*</span></label>
+															<input type="text" class="input-text" name="username" id="reg_username" value="" placeholder="Username">
+														</p>
+
+													
+													<p class="form-row form-row-wide">
+														<label for="reg_email">Email address <span class="required">*</span></label>
+														<input type="email" class="input-text" name="email" id="reg_email" value="" placeholder="Email Address">
+													</p>
+
+													
+													<p class="form-row form-row-wide">
+														<label for="reg_password">Password <span class="required">*</span></label>
+														<input type="password" class="input-text" name="password" id="reg_password" placeholder="Password">
+													</p>
+
+													
+													<!-- Spam Trap -->
+													<div style="left: -999em; position: absolute;"><label for="trap">Anti-spam</label><input type="text" name="email_2" id="trap" tabindex="-1"></div>
+
+													<p class="form-row form-row-wide">
+														<label for="reg_password2">Password Repeat <span class="required">*</span></label>
+														<input type="password" class="input-text" name="password2" id="reg_password2" value="" placeholder="Repeat Password">
+													</p>
+															
+													<p class="form-row">
+														<input type="hidden" id="_wpnonce" name="_wpnonce" value="2dad3e2eb4"><input type="hidden" name="_wp_http_referer" value="/tttraining/my-account/?login=false">				<input type="submit" class="button btn submit" name="register" value="Register">
+													</p>
+
+													
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+				</div>	
+			</div>
+		</section>
+	</div>
+</div>
+
+{{>footer}}
+
+</main>

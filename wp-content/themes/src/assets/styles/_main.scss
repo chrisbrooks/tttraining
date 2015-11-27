@@ -1,0 +1,300 @@
+//Home Page
+
+.home {
+
+	.videos {
+		background: #f2f2f2;
+    	padding: 40px 0px;
+
+    	@media (min-width: $screen-sm-min) {
+    		padding: 80px 0px;
+
+    		.vimeo.banner {
+    			margin-bottom: 0px;
+    		}
+
+    		li {
+    			margin-bottom: 0px;
+    		}
+    	}
+	}
+
+	.counter {
+		border: 1px solid #ddd;
+		text-align: center;
+		padding: 30px 0px;
+		background: url("../images/counter-background.jpg");
+		background-size: cover;
+		height: 250px;
+		border-bottom: none;
+		border-radius: 3px;
+
+		.count {
+			width: 231px;
+			margin: 0 auto;
+			border: 2px solid $blue;
+			padding: 10px 10px 12px;
+
+			h2 {
+				margin: 0px;
+				@include font-size(5.8);
+				font-weight: 400;
+				line-height: 58px;
+				margin-bottom: 8px;
+				color:$blue;
+			}
+
+			p {
+				margin: 0px;
+				@include font-size(1.4);
+				text-transform: uppercase;
+				line-height: 14px;
+				font-weight:400;
+				color:$darkBlue;
+				letter-spacing: 3px;
+			}
+		}
+
+		@media (min-width: $screen-sm-min)  {
+			height:400px;
+			background-position: bottom center;
+			padding:50px 0px;
+
+		}
+
+		@media (min-width: $screen-lg-min)  {
+			height:330px;
+		}
+	}
+
+	.sign-up {
+		border:1px solid #ddd;
+		padding: 20px 20px;
+		background: url("../images/signup-background.jpg");
+		background-size: cover;
+		height:250px;
+		display: table;
+		width:100%;
+		border-radius: 3px;
+		margin-bottom: 40px;
+
+		.sign-up-content {
+			display: table-cell;
+			vertical-align: middle;
+
+			p {
+				text-align: center;
+				color: $grey-dark;
+				margin: 0px;
+				text-transform: uppercase;
+				font-weight: 400;
+				line-height: 14px;
+
+				&:first-child {
+					margin-top: 3px;
+					@include font-size(1.5);
+					letter-spacing: 5px;
+					margin-left: 8px;
+				}
+
+				&:nth-child(3) {
+					letter-spacing: 4px;
+					margin-left: 6px;
+				}
+
+				&.free {
+					@include font-size(4.8);
+					line-height: 50px;
+					margin: 5px 0px 6px;
+					display: block;
+					font-weight: 400;
+					color: $blue;
+
+					span{
+						@include font-size(5.2);
+						font-weight:300;
+					}
+				}
+			}
+
+			a {
+				color: $white;
+				background: $darkBlue;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				padding: 8px 0px;
+				margin-top: 20px;
+				@include font-size(2.3);
+				text-transform: uppercase;
+				font-weight: 500;
+				width: 100%;
+				margin: 12px auto 0px;
+				letter-spacing: 4px;
+
+				&:hover {
+					background: $blue;
+				}
+			}
+		}
+
+		@media (min-width: $screen-sm-min)  {
+			height:400px;
+			background-position: top center;
+			margin-bottom: 50px;
+
+			.sign-up-content {
+				p {
+					&:first-child {
+
+						@include font-size(1.4);
+						letter-spacing: 8px;
+					}
+
+					&.free {
+						@include font-size(5.8);
+						line-height: 50px;
+						margin: 10px 0px 12px;
+					}
+
+					&:nth-child(3) {
+						letter-spacing: 5px;
+					}
+				}
+
+				a {
+					width: 260px;
+				}
+			}
+		}
+
+		@media (min-width: $screen-lg-min)  {
+			height:330px;
+			margin-bottom: 0px;
+		}
+	}
+
+	.gallery-banner {
+
+		@media (min-width: $screen-md-min)  {
+
+			.gallery-banner-container {
+				padding-right: 0px;
+
+				.banner {
+
+					&.side {
+						border-right:2px solid $white;
+					}
+				}
+			}
+
+			.thumbnails {
+
+				li {
+
+					padding-left: 0px;
+
+					.thumbnail.side {
+						margin-bottom: 0px;
+						border-radius: 0px 3px 3px 0px;
+
+						.video-content {
+							border-radius: 0px 3px 3px 0px;
+						}
+					}
+
+					&:first-child {
+
+						.thumbnail.side {
+							border-bottom: 1px solid $white;
+						}
+					}
+
+					&:last-child {
+
+						.thumbnail.side {
+							border-top: 1px solid $white;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.players {
+		position:relative;
+		border: 1px solid #ddd;
+		padding: 50px 20px;
+		background-size: cover;
+		border-radius: 3px;
+		background-size:cover;
+
+		.player-container{
+
+			.player {
+				height:243px;
+				width:225px;
+				background-size: cover;
+				margin: 0px auto;
+			}
+
+			.player-one-info {
+				margin-bottom: 20px;
+			}
+		}
+
+		.name {
+			padding: 7px;
+			text-align: center;
+			background: $darkBlue;
+			margin: 0px 0px;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 400;
+			@include font-size(1.4);
+			margin-bottom: 10px;
+			letter-spacing: 2px;
+			border-radius: 2px;
+		}
+
+		@media (min-width: $screen-sm-min)  {
+
+			.player-container {
+
+				.player {
+					height: 423px;
+					width: 420px;
+				}
+
+				.player-one-info {
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+}
+
+.gallery-page {
+
+	.gallery-container {
+
+		section {
+			padding:40px 0px 10px;
+
+			@media (min-width: $screen-sm-min)  {
+				padding:60px 0px 30px;
+			}
+		}
+
+		h1{
+			@include font-size(3.0);
+			text-align:center;
+			margin-bottom:10px;
+			letter-spacing:5px;
+			font-weight:100;
+			text-transform:uppercase;
+		}
+	}
+}
+

@@ -1,0 +1,84 @@
+---
+layout: default.hbs
+class: login-page
+---
+
+<main class="main">
+
+{{>header}}
+
+<div class="content inner-page">
+
+	<div class="woocommerce">
+
+		<section class="section login-forms">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+					<h1>My Account</h1>
+			
+					<p class="myaccount_user">
+						Hello <strong>james p</strong> (not james p? <a href="http://localhost:8888/tttraining/my-account/customer-logout/">Sign out</a>). From your account dashboard you can view your recent orders, manage your shipping and billing addresses and <a href="http://localhost:8888/tttraining/my-account/edit-account/">edit your password and account details</a>.
+					</p>
+
+					<h2>My Address</h2>
+
+					<p class="myaccount_address">The following addresses will be used on the checkout page by default.</p>
+
+					<div class="col-1 address">
+						<header class="title">
+							<h3>Billing Address</h3>
+							<a href="http://localhost:8888/tttraining/my-account/edit-address/billing" class="edit">Edit</a>
+						</header>
+						<address>
+							Chris Brooks<br>Chris Brooks Limited<br>44 St Catherines Close<br>Raynes Park<br>London<br>SW20 9NL		</address>
+					</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+	</div>
+
+</div>
+
+{{>footer}}
+
+</main>
+
+
+<div class="woocommerce">
+<p class="myaccount_user">
+	Hello <strong>james p</strong> (not james p? <a href="http://localhost:8888/tttraining/my-account/customer-logout/">Sign out</a>). From your account dashboard you can view your recent orders, manage your shipping and billing addresses and <a href="http://localhost:8888/tttraining/my-account/edit-account/">edit your password and account details</a>.</p>
+
+
+
+
+
+<h2>My Address</h2>
+
+<p class="myaccount_address">
+	The following addresses will be used on the checkout page by default.</p>
+
+
+
+	<div class="col-1 address">
+		<header class="title">
+			<h3>Billing Address</h3>
+			<a href="http://localhost:8888/tttraining/my-account/edit-address/billing" class="edit">Edit</a>
+		</header>
+		<address>
+			You have not set up this type of address yet.		</address>
+	</div>
+
+
+
+</div>

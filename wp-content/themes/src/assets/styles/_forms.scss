@@ -1,0 +1,67 @@
+form {
+	
+	label {
+    	display: none;
+    }
+
+    input, select {
+		width: 100%;
+		background: $white;
+		border: 1px solid #ddd;
+		padding: 15px;
+		margin: 20px 0px 0px;
+		letter-spacing: 2px;
+		@include prefixed(border-radius, 2px);
+
+		&.btn {
+			text-transform: uppercase;
+			background: $blue;
+			border:none;
+			padding:15px;
+			color:$white;
+			letter-spacing: 2px;
+			font-weight: 100;
+
+			&:hover {
+				background: $darkBlue;
+			}
+		}
+
+		&:focus {
+			border:1px solid #ddd;
+			outline: none;
+		}
+    }
+
+    select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		text-indent: 1px;
+		text-overflow: '';
+	}
+
+    ::-webkit-input-placeholder { 
+		letter-spacing: 2px; 
+		text-transform: uppercase; 
+		@include font-size(1.2);
+		vertical-align: middle;
+	}
+
+	::-moz-placeholder {
+		letter-spacing: 2px; 
+		text-transform: uppercase; 
+		@include font-size(1.2);
+	}
+
+	:-ms-input-placeholder { 
+		letter-spacing: 2px; 
+		text-transform: uppercase; 
+		@include font-size(1.2);
+	}
+
+	input:-moz-placeholder { 
+		letter-spacing: 2px; 
+		text-transform: uppercase; 
+		@include font-size(1.2);
+	}
+}

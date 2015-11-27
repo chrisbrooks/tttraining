@@ -1,0 +1,96 @@
+html{
+	font-size: 62.5%;
+}
+body{
+	@include font-size(1.4);
+	letter-spacing: 2px;
+	color:$black;
+	line-height: normal;
+	background: $white;
+}
+
+body,html{
+	font-family: 'Oswald', sans-serif;
+	font-weight:300;
+	font-style:normal;
+	height:100%;
+}
+
+a{
+	text-decoration:none;
+	@include prefixed(transition, all .35s ease);
+	@include hardwareAccel();
+	&:hover{
+		text-decoration:none;
+	}
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin:0px;
+}
+
+h1 {
+	font-weight: 100;
+	@include font-size(2.5);
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+ul{
+	margin:0px;
+	padding:0px;
+	li{
+		list-style-type:none;
+		a{
+			&:hover, &:focus, &:active{
+				text-decoration:none;
+			}
+		}
+	}
+}
+
+.opacity{
+	opacity:0;
+}
+
+.visible{
+	opacity:1;
+}
+
+.main {
+	height: 100%;
+}
+
+.content{
+
+	&.inner-page{
+		padding-top:111px;
+	}
+}
+
+.section{
+	padding:40px 0px;
+	position: relative;
+	background: $white;
+
+	@media (min-width: $screen-sm-min) {
+		padding:80px 0px;
+	}
+}
+
+.inner-page {
+	.section {
+		@media (min-width: $screen-sm-min) {
+			padding:40px 0px;
+		}
+	}
+}
+
+.no-padding-left {
+	padding-left:0px;
+}
+
+.no-padding-right {
+	padding-right:0px;
+}

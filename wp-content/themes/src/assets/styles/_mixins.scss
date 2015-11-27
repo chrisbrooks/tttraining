@@ -1,0 +1,84 @@
+$black: #000;
+$white: #fff;
+$blue: #3bc6f3;
+$darkBlue: #031421;
+$secondary: lighten($black, 14);
+$grey-dark: #222;
+$grey: #999;
+$light-grey: #f2f2f2;
+$red: #e85e5e;
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+// Browser Prefixes - Which CSS prefixes should be used?
+$webkit: true !default;
+$moz: false !default;
+$ms: false !default;
+$o: false !default;
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+
+// prefix declarations
+@mixin prefixed($property, $value) {
+  @if $webkit == true {
+    -webkit-#{$property}: #{$value};
+  }
+
+  @if $moz == true {
+    -moz-#{$property}: #{$value};
+  }
+
+  @if $ms == true {
+    -ms-#{$property}: #{$value};
+  }
+
+  @if $o == true {
+    -o-#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
+}
+
+
+@mixin hardwareAccel() {
+  @include prefixed(transform, translateZ(0));
+}
+
+@mixin improveAntiAlias() {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin fontSmooth() {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin forceBlockLevel() {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin hacks() {
+  @include forceBlockLevel();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+  @include fontSmooth();
+}

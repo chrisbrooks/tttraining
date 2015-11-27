@@ -1,0 +1,105 @@
+.btn{
+	padding:5px;
+	text-transform:uppercase;
+	font-weight:400;
+	border:2px solid $blue;
+	color:$blue;
+	display:block;
+	margin-bottom: 10px;
+    text-align: center; 
+    letter-spacing:2px;
+    border-radius:2px;
+    @include font-size(1.4);
+    @include prefixed(transition, all .35s ease);
+	@include hardwareAccel();
+
+    &.darkBlue{
+    	background:$darkBlue;
+    	border:none;
+    	padding:7px;
+    } 
+
+    &.white{
+    	border:2px solid $white;
+  		color:$white;
+    }
+
+    &.red {
+    	border:2px solid $red;
+    	color:$red;
+    }
+
+    &.fill-effect{
+		&:hover{
+			background:$blue;
+			color:$white;
+		}
+	}
+}
+
+.arrow-down {
+	display: block;
+	width: 60px;
+	height: 60px;
+	position:absolute;
+	left:50%;
+	margin-left:-30px;
+	bottom:10px;
+	opacity: 0;
+	svg line {
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+	svg circle {
+		stroke: #fff;
+		stroke-width: 2px;
+		stroke-dasharray: 500;
+		stroke-dashoffset: 500;
+		fill: none;
+	}
+	&.as-circle-full svg circle {
+		@include prefixed(animation, circle-full 2s ease-in-out alternate forwards);
+	}
+	&.as-circle-none svg circle {
+		@include prefixed(animation, circle-none 2s ease-in-out forwards 1s);
+	}
+	@include keyframes(circle-full) {
+		0% { stroke-dashoffset: 500;opacity: 0}
+		100% { stroke-dashoffset: 0;opacity: 1}
+	}
+	@include keyframes(circle-none) {
+		0% { stroke-dashoffset: 0;opacity: 0}
+		100% { stroke-dashoffset: 500;opacity: 1}
+	}
+}
+
+.arrow-up {
+	display: none;
+	width: 60px;
+	height: 60px;
+	position:fixed;
+	right:20px;
+	bottom:20px;
+	cursor:pointer;
+	z-index:1;
+	opacity:0.5;
+	@include prefixed(transition, all .35s ease-in-out);
+	@include hardwareAccel();
+	
+	svg{
+		display:none;
+		line {
+			stroke: #999;
+			stroke-width: 2px;
+		}
+		circle {
+			stroke: #999;
+			stroke-width: 2px;
+			stroke-dashoffset: 500;
+			fill: none;
+		}
+	}
+	&:hover{
+		opacity:1;
+	}
+}
